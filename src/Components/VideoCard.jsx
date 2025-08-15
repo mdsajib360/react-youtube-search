@@ -11,8 +11,9 @@ class VideoCard extends Component {
     const { isHovered } = this.state;
 
     return (
-      <div 
-        className="w-full"
+      <Link
+        to={`/video/${videoId}`}
+        className="block w-full"
         onMouseEnter={() => this.setState({ isHovered: true })}
         onMouseLeave={() => this.setState({ isHovered: false })}
       >
@@ -26,22 +27,21 @@ class VideoCard extends Component {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="rounded-lg"
+            className="rounded-lg pointer-events-none"
           ></iframe>
         ) : (
-          <Link to={`/video/${videoId}`}>
-            <img
-              src={thumbnail}
-              alt={title}
-              className="rounded-lg w-full h-48 object-cover hover:opacity-80 transition"
-            />
-          </Link>
+          <img
+            src={thumbnail}
+            alt={title}
+            className="rounded-lg w-full h-48 object-cover hover:opacity-80 transition"
+          />
         )}
 
+        {/* Video info */}
         <h4 className="mt-2 font-semibold text-base">{title}</h4>
         <p className="text-sm text-gray-600">{channel}</p>
         <p className="text-sm text-gray-500">{views} views</p>
-      </div>
+      </Link>
     );
   }
 }

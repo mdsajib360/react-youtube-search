@@ -6,7 +6,7 @@ class Feed extends Component {
   state = { videos: [] };
 
   fetchVideos = (query) => {
-    const API_KEY = 'AIzaSyDYXkH69CtWLauymANh7ccZSqg0GSh5dJo';
+    const API_KEY = 'AIzaSyDHdORajuV1JF-OJNkqddmUNjhJIhssP9w';
 const search_url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=12&key=${API_KEY}&q=${encodeURIComponent(query)}`;
 
     axios.get(search_url)
