@@ -43,6 +43,7 @@ const search_url = `https://www.googleapis.com/youtube/v3/search?part=snippet&ty
       <div className="flex-1 p-6">
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           {this.state.videos.map((video, i) => (
+         
             <VideoCard key={i} {...video} />
           ))}
         </div>
