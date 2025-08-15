@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import searchIcon from '../assets/search.png';
 
 class SearchBar extends Component {
-  state = { searchQuery: '' };
+  
 
   handleInputChange = (e) => {
     this.setState({ searchQuery: e.target.value });
+    this.handleSearch()
   };
 
   handleSearch = () => {
@@ -28,7 +29,7 @@ class SearchBar extends Component {
           type="text"
           placeholder="Search"
           className="w-full h-10 px-4 border border-gray-300 rounded-l-full focus:outline-none"
-          value={this.state.searchQuery}
+          value={this.props.searchQuery}
           onChange={this.handleInputChange}
           onKeyPress={this.handleKeyPress}
         />
