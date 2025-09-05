@@ -7,7 +7,7 @@ class VideoCard extends Component {
   };
 
   render() {
-    const { title, channel, views, thumbnail, videoId } = this.props;
+    const { title, channel, views, thumbnail, videoId } = this.props.video;
     const { isHovered } = this.state;
 
     return (
@@ -24,9 +24,6 @@ class VideoCard extends Component {
             height="192"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`}
             title={title}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
             className="rounded-lg pointer-events-none"
           ></iframe>
         ) : (

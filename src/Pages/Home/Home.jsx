@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Sidebar from '../Components/Sidebar';
-import Feed from '../Components/Feed';
+import { Component } from "react";
+import Sidebar from "../../Components/SideBar/Sidebar";
+import Feed from "../Components/Feed";
 
 class Home extends Component {
   render() {
@@ -13,7 +13,12 @@ class Home extends Component {
 
         {/* Feed */}
         <div className="flex-1 p-4">
-          <Feed searchQuery={this.props.searchQuery} />
+          <Feed
+            videos={this.props.videos}
+            fetchVideos={this.props.fetchVideos}
+            searchQuery={this.props.searchQuery}
+             updateQuery={this.props.updateQuery}
+          />
         </div>
 
         {/* Bottom Menu for Mobile */}
